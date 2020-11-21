@@ -20,6 +20,7 @@ python:
 
     # Example character situation:
     loc_exp = []
+    availableLocs = []
     flag = false
 
     # This would be located where the flag actually happens preferably:
@@ -41,3 +42,51 @@ python:
 
     def place_chars(chosen):
         return
+        availableLocs.append(1) #this would be the place we want to add
+
+    # Available characters and their time availabilities:
+    unlockedChars = {"a": {1, 2, 3}, "b": {5, 7}, "c": {4}, "d": {6}}
+
+    #time period would be an incrementing variable
+    #global period = 0
+
+    #grabs the characters meant to be displayed on this day of the week
+    def guarenteed_chars():
+        dayofweek = period % 0
+
+        for character in unlockedChars:
+            if dayofweek in unlockedChars[character]:
+                chosen.append(character)
+                #remove location from list of locations a character can spawn
+                #maintain a list of available chars
+                pass
+
+        availableChars = [unlockedChars.key() not in chosen]
+        pick_chars(availableChars)
+
+
+    # Function run at the start of each map section to pick bonus characters
+    def pick_chars(availableChars):
+        #renpy.random.shuffle(unlockedchars)
+        #chosen = unlockedchars[0:2]
+        locs = len(availableLocs)
+
+        if period < 10: #placeholder day 10.
+            aRate = .5 #probability a character will appear who isn't meant to
+        elif period > 10 and period < 20:
+            aRate = .75
+        else:
+            aRate = .9
+
+        for x in availableChars[3:]:
+            if locs <= 0: #we only want to pick as many characters as we have unlocked places
+                break
+
+            appear = renpy.random.random()
+            if appear > aRate:
+                chosen.append(x)
+                locs = locs - 1
+        place_chars(chosen)
+
+    def place_chars(chosen):
+        pass
