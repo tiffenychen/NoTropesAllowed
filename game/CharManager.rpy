@@ -1,4 +1,10 @@
-python:
+#image icon1 = "tempicon1.png"
+#image icon2 = "tempicon2.png"
+
+init python:
+    #renpy.image("icon1", Image("tempicon.png"))
+    renpy.image("icon1", "images/tempicon1.png")
+    renpy.image("icon2", "images/tempicon2.png")
     # character placements and thread tracking
 
     # List of locations a character is allowed to show up in
@@ -21,14 +27,14 @@ python:
     # Example character situation:
     loc_exp = []
     availableLocs = []
-    flag = false
+    #flag = false
 
     # This would be located where the flag actually happens preferably:
-    if flag:
-        loc_exp.append(1)
+    #if flag:
+        #loc_exp.append(1)
 
     # Available characters:
-    unlockedchars = [a, b, c, d]
+    unlockedchars = ["a", "b", "c", "d"]
 
     # Function run at the start of each map section to place characters
     def pick_chars():
@@ -88,5 +94,7 @@ python:
                 locs = locs - 1
         place_chars(chosen)
 
-    def place_chars(chosen):
-        pass
+    #def place_chars(chosen):
+    def place_chars():
+        renpy.show("icon1", at_list=[Position(xpos = 50, ypos = 50)], layer='overlay')
+        renpy.show("icon2", at_list=[Position(xpos = 500, ypos = 500)], layer='top')

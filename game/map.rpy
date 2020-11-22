@@ -22,6 +22,7 @@ screen map():
     imagebutton idle "cottage.png" hover "cottage.png"  xpos  1100 ypos 490 focus_mask True action [Hide('map'),Jump('port')]
     imagebutton idle "cottage.png" hover "cottage.png"  xpos  840 ypos 400 focus_mask True action [Hide('map'),Jump('tailors')]
     imagebutton idle "cottage.png" hover "cottage.png"  xpos  500 ypos 330 focus_mask True action [Hide('map'),Jump('tavern')]
+    $ place_chars()
     #imagebutton auto "buttons/exit%s.png" xpos  415 ypos 550 focus_mask True action Jump('castle'), Hide("Anotherscreen") hovered Show("Anotherscreen") unhovered Hide("Anotherscreen")
     #vbox xalign 1.0 yalign 1.0:
      #    imagebutton auto "castle%s.png"
