@@ -38,6 +38,14 @@ transform shake:
         ease .01 xoffset 2
         ease .01 xoffset -2
         ease .01 xoffset 0
+transform extend_dissolve:
+    alpha 0.0
+    linear 4.0 alpha 1.0
+    on replace:      # when new image appears
+        alpha 0.0
+        linear 4.0 alpha 1.0
+    on replaced:     # when old image disappears
+        linear 4.0 alpha 0.0
 
 #Eadan images
 image Eadan happy:
@@ -110,6 +118,7 @@ label start:
             "Gladrock": False,
             "Meraline": False,
             "Jinglu": False}
+        storyTag = ["_beg", "_med", "_end"]
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the

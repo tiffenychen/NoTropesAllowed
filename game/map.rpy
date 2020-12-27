@@ -66,6 +66,7 @@ label guardpost:
 label marketplace:
     scene bg castle
     MC "We've arrived at the market place"
+    jump Jinglu_handler
     return
 label port:
     scene bg castle
