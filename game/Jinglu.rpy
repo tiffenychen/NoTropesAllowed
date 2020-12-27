@@ -1,6 +1,8 @@
 label Jinglu_handler:
     if charProgress["Jinglu"] == 3:
         "It looks like there's nobody here right now."
+        scene black
+        call screen map
     else:
         $ renpy.jump("Jinglu" + storyTag[charProgress["Jinglu"]])
 
