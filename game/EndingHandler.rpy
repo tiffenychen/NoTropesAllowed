@@ -1,5 +1,5 @@
 label ending_handler:
-    if sum(charProgress.values()) = 15:
+    if sum(charProgress.values()) == 15:
         jump end_sequence
     else:
         scene black
