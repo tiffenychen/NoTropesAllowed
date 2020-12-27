@@ -22,53 +22,62 @@ screen map():
     imagebutton idle "cottage.png" hover "cottage.png"  xpos  1100 ypos 490 focus_mask True action [Hide('map'),Jump('port')]
     imagebutton idle "cottage.png" hover "cottage.png"  xpos  840 ypos 400 focus_mask True action [Hide('map'),Jump('tailors')]
     imagebutton idle "cottage.png" hover "cottage.png"  xpos  500 ypos 330 focus_mask True action [Hide('map'),Jump('tavern')]
-    $ place_chars()
+
+    showif charProgress['Jinglu'] == 0 and sum(charProgress.values()) > 2:
+        image "Jinglu_icon.png" xpos 750 ypos 300
+    elif charProgress['Jinglu'] == 1:
+        image "Jinglu_icon.png" xpos 750 ypos 300
+    elif charProgress['Jinglu'] == 2:
+        image "Jinglu_icon.png" xpos 980 ypos 0
+
+    image "Eadan_icon.png" xpos 550 ypos 400
+    #$ place_chars()
     #imagebutton auto "buttons/exit%s.png" xpos  415 ypos 550 focus_mask True action Jump('castle'), Hide("Anotherscreen") hovered Show("Anotherscreen") unhovered Hide("Anotherscreen")
     #vbox xalign 1.0 yalign 1.0:
      #    imagebutton auto "castle%s.png"
 label arena:
     scene bg castle
-    e "We've arrived at the arena"
+    MC "We've arrived at the arena"
     return
 label bakery:
     scene bg castle
-    e "We've arrived at the bakery"
+    MC "We've arrived at the bakery"
     return
 label cave:
     scene bg castle
-    e "We've arrived at the cave"
+    MC "We've arrived at the cave"
     return
 label castle:
     scene bg castle
-    e "We've arrived at the castle"
+    MC "We've arrived at the castle"
     return
 label cottage:
     scene bg castle
-    e "We've arrived at the cottage"
+    MC "We've arrived at the cottage"
     return
 label forest:
     scene bg castle
-    e "We've arrived at the forest"
+    MC "We've arrived at the forest"
     return
 label guardpost:
     scene bg castle
-    e "We've arrived at the guard post"
+    MC "We've arrived at the guard post"
     return
 label marketplace:
     scene bg castle
-    e "We've arrived at the market place"
+    MC "We've arrived at the market place"
     return
 label port:
     scene bg castle
-    e "We've arrived at the port"
+    MC "We've arrived at the port"
     return
 label tailors:
     scene bg castle
-    e "We've arrived at the tailor's"
+    MC "We've arrived at the tailor's"
     return
 label tavern:
     scene bg tavern
-    e "We've arrived at the tavern"
+    MC "We've arrived at the tavern"
     return
 
 screen mapicon:
