@@ -1,6 +1,6 @@
 label ending_handler:
     if sum(charProgress.values()) = 15:
-        jump end_sequence:
+        jump end_sequence
     else:
         scene black
         call screen map
