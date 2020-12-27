@@ -151,6 +151,11 @@ define config.save_directory = "NoTropesAllowed-1604869743"
 
 define config.window_icon = "gui/window_icon.png"
 
+## Layers ########################################################################
+##
+## The icon displayed on the taskbar or dock.
+
+define config.layers = [ 'master', 'transient', 'screens', 'top', 'overlay' ]
 
 ## Build configuration #########################################################
 ##
@@ -182,6 +187,9 @@ init python:
     build.classify('**/.**', None)
     build.classify('**/#**', None)
     build.classify('**/thumbs.db', None)
+    build.classify('**.png', None)
+    build.classify('**.rpy', None)
+    build.classify('**.rpyc', None)
 
     ## To archive files, classify them as 'archive'.
 
