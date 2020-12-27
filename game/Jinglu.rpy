@@ -1,5 +1,8 @@
 label Jinglu_handler:
-    $ renpy.jump("Jinglu" + storyTag[charProgress["Jinglu"]])
+    if charProgress["Jinglu"] == 3:
+        "It looks like there's nobody here right now."
+    else:
+        $ renpy.jump("Jinglu" + storyTag[charProgress["Jinglu"]])
 
 label Jinglu_beg:
     "It's really about time you stop by the marketplace to get some groceries for yourself. And right now, your road travel rations are starting to dwindle and you figure a quick break for some shopping won't hurt."
@@ -33,9 +36,8 @@ label Jinglu_beg:
     "Nhom picks up the bags of items the shopkeeper was filling while you two talked. It's a lot and you're surprised the shopkeeper knew what Nhom would want. Perks of living in a small village you suppose."
     "You then realize you didn't think about what vegetables you would want the entire time you were waiting your turn."
     MC "Uh.... Could I get-"
-    scene black
     $ charProgress["Jinglu"] +=1
-    call screen map
+    jump ending_handler
 
 label Jinglu_med:
     "The marketplace seems oddly empty today. You understand this is a small village, but even so you expect at least a shopkeep or two to be trying to hawk their wares to you."
@@ -61,9 +63,8 @@ label Jinglu_med:
     "The sound of cloth against cloth rustling and a playful shove hits your ears. Then the footsteps start moving away. It doesn't sound like they'll be addressing what Kaelin is going to do in exchange for the raw silk."
     "You wait another beat or two after the footsteps disappear before you come out from behind the stall."
     "You look toward the direction they left in and wonder how well the two actually know each other and what their plan is, but—deciding you don't want to be caught if they come back—you beat a quick retreat from the scene."
-    scene black
     $ charProgress["Jinglu"] +=1
-    call screen map
+    jump ending_handler
 
 label Jinglu_end:
     "You trudge into the forest with determination as you decide it's time to finally confront this Jinglu character about everything he's been doing to the village."
@@ -108,11 +109,12 @@ label Jinglu_end:
             Jinglu "Oh, if this is about Nhom's house, I was actually trying to help put the place back together. A freak storm had blown through the forest and when I followed it to make sure things were okay, I found Nhom's house at the end."
             Jinglu "Unfortunately, he came back before I finished fixing everything and I had to leave; I didn't think he would want to see me."
             MC "I think you just need to talk to everyone and let them know the real you."
+            MC "Actually it sounds like you help people behind the scenes a lot. Maybe they'll want to make you mayor instead."
+            "Jinglu laughs with you at your joke."
             $ charProblems["Jinglu"] = True
     "Jinglu finishes tying up the bandage and hums. The sound is pleasant like he's finally made up his mind about something."
     Jinglu "Thank you for saying that. I think I know what I need to do."
     Jinglu "I have some preparation to do though. You should probably go so you can take care of that arm."
     MC "Okay, sure. Thanks, and good luck."
-    scene black
     $ charProgress["Jinglu"] +=1
-    call screen map
+    jump ending_handler
