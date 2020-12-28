@@ -128,8 +128,9 @@ label Jinglu_end:
             Jinglu "Unfortunately, he came back before I finished fixing everything and I had to leave; I didn't think he would want to see me."
             show Jinglu happyh
             MC "I think you just need to talk to everyone and let them know the real you."
-            MC "Actually it sounds like you help people behind the scenes a lot. Maybe they'll want to make you mayor instead."
+            MC "Actually it sounds like you help people behind the scenes a lot. Maybe they'll actually vote you into office instead of me."
             "Jinglu laughs with you at your joke."
+            Jinglu "Oh, I didn't realize I was in the running. Kaelin must have been serious about entering my name."
             $ charProblems["Jinglu"] = True
     show Jinglu happyh
     "Jinglu finishes tying up the bandage and hums. The sound is pleasant like he's finally made up his mind about something."
