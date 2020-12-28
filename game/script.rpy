@@ -46,6 +46,13 @@ transform extend_dissolve:
         linear 4.0 alpha 1.0
     on replaced:     # when old image disappears
         linear 4.0 alpha 0.0
+transform offscreen:
+    xalign 1.4
+
+#backgrounds
+image bg forest:
+    zoom .5
+    "forest.jpg"
 
 #Eadan images
 image Eadan happy:
@@ -69,31 +76,64 @@ image Eadan annoyed:
 image Eadan = "Eadan_icon.png"
 
 #Jinglu images
-image Jinglu happy:
+image Jinglu happyh:
     zoom .45
     "Jinglu_happyh.png"
-image Jinglu sad:
+image Jinglu sadh:
     zoom .45
     "Jinglu_sadh.png"
-image Jinglu confused:
+image Jinglu confusedh:
     zoom .45
     "Jinglu_confusedh.png"
-image Jinglu cry:
+image Jinglu cryh:
     zoom .45
     "Jinglu_cryh.png"
-image Jinglu angry:
+image Jinglu angryh:
     zoom .45
     "Jinglu_angryh.png"
-image Jinglu annoyed:
+image Jinglu annoyedh:
     zoom .45
     "Jinglu_annoyedh.png"
-image Jinglu smirk:
+image Jinglu smirkh:
     zoom .45
     "Jinglu_smirkh.png"
-image Jinglu worry:
+image Jinglu worryh:
     zoom .45
     "Jinglu_worryh.png"
+image Jinglu blushh:
+    zoom .45
+    "Jinglu_blushh.png"
+image Jinglu happy:
+    zoom .25
+    "Jinglu_happy.png"
+image Jinglu sil:
+    zoom .25
+    "Jinglu_sil.png"
+image Jinglu smirk:
+    zoom .25
+    "Jinglu_smirk.png"
+image Jinglu worry:
+    zoom .25
+    "Jinglu_worry.png"
 image Jinglu = "Jinglu_icon.png"
+
+#Meraline images
+image Meraline happy:
+    zoom .6
+    "Meraline_happy.png"
+image Meraline sad:
+    zoom .6
+    "Meraline_sad.png"
+image Meraline angry:
+    zoom .6
+    "Meraline_angry.png"
+image Meraline ehappy:
+    zoom .6
+    "Meraline_ehappy.png"
+image Meraline unsure:
+    zoom .6
+    "Meraline_unsure.png"
+image Meraline = "Meraline_icon.png"
 
 #textbutton tr["fr"].music[k] action [mr.Play(music[k]), SelectedIf(renpy.music.get_playing() == music[k])] style "map_label" text_style "map_label_button_text"
 

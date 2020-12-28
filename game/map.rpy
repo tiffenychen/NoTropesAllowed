@@ -56,8 +56,8 @@ label cottage:
     MC "We've arrived at the cottage"
     return
 label forest:
-    scene bg castle
-    MC "We've arrived at the forest"
+    scene bg forest
+    jump Jinglu_handler
     return
 label guardpost:
     scene bg castle
@@ -65,7 +65,6 @@ label guardpost:
     return
 label marketplace:
     scene bg castle
-    MC "We've arrived at the market place"
     jump Jinglu_handler
     return
 label port:
