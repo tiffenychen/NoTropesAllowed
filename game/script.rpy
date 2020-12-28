@@ -22,6 +22,12 @@ transform hop: #makes character do small jump
     yalign 1.0
     linear .1 yalign .5
     linear .1 yalign 1.0
+transform sink: #character sinks down a little
+    yalign 1.0
+    linear .1 yalign 1.3
+transform rise: #character comes back up form a sink
+    yalign 1.3
+    linear .1 yalign 1.0
 transform shake:
         yalign 1.0
         xalign .75
@@ -135,6 +141,36 @@ image Meraline unsure:
     "Meraline_unsure.png"
 image Meraline = "Meraline_icon.png"
 
+#Gladrock images
+image Gladrock happyh:
+    zoom .55
+    "Gladrock_happyh.png"
+image Gladrock sadh:
+    zoom .55
+    "Gladrock_sadh.png"
+image Gladrock confusedh:
+    zoom .55
+    "Gladrock_confusedh.png"
+image Gladrock angryh:
+    zoom .55
+    "Gladrock_angryh.png"
+image Gladrock worryh:
+    zoom .55
+    "Gladrock_worryh.png"
+image Gladrock happy:
+    zoom .25
+    "Gladrock_happy.png"
+image Gladrock sil:
+    zoom .25
+    "Gladrock_sil.png"
+image Gladrock smirk:
+    zoom .25
+    "Gladrock_smirk.png"
+image Gladrock worry:
+    zoom .25
+    "Gladrock_worry.png"
+image Gladrock = "Gladrock_icon.png"
+
 #textbutton tr["fr"].music[k] action [mr.Play(music[k]), SelectedIf(renpy.music.get_playing() == music[k])] style "map_label" text_style "map_label_button_text"
 
 
@@ -160,28 +196,97 @@ label start:
             "Jinglu": False}
         storyTag = ["_beg", "_med", "_end"]
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
     show screen mapicon
-    #show screen map
-
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
-    show Jinglu happy
 
     init:
         image black = Solid((0, 0, 0, 255))
         image MediumVioletRed = Solid("#c71585")
 
-
-    # These display lines of dialogue.
-
-    #e "Once you add a story, pictures, and music, you can release it to the world!"
-    w "Test"
-
-    # This ends the game.
-
-    return
+    scene black
+    "I've been traveling for days and I'm finally here..."
+    $ tname = renpy.input("The town of:")
+    if tname == "":
+        $tname = "Nowheresville"
+    MC "The town of %(tname)s awaits me."
+    #scene town image with fade
+    "Well..it certainly is small. Smaller than I expected, actually. {i}Quite{/i} small."
+    show Gladrock happyh at center
+    Gladrock "Fare ye well, young traveller!"
+    MC "AH! What the?!"
+    show Gladrock sadh
+    Gladrock "Terribly sorry, fair pilgrim, I did not mean to startle ye. {w} You, that is."
+    MC "Who are you? Why have you accosted me?"
+    show Gladrock confusedh at center, hop
+    Gladrock "{i}Accosted?{/i}"
+    show Gladrock angryh at center, hop
+    Gladrock "Why I have never been more offended in all my days, youthful wanderer. I am not here to {i}accost.{/i}"
+    show Gladrock happyh at center, hop
+    Gladrock "I am here to welcome! I am shocked that you have not heard tell of me, Gladrock the Wise!"
+    MC "Oh...my apologies Mr. Gladrock, I have not heard tell. But it is only because I lead the life of a nomad, cursed to wander until I have found my true home...which, I believe, is here!"
+    Gladrock "You have come to stay, then?"
+    MC "Come to stay? I have come to do more than stay Mr. W. I have come to take charge! To be your leader!"
+    show Gladrock confusedh
+    Gladrock "Come again?"
+    MC "I have come...to run for mayor."
+    show Gladrock worryh
+    Gladrock "Oh. Well. I see."
+    MC "You see, I have walked for many days and many nights to stand before you today. Three, to be exact."
+    show Gladrock confusedh
+    Gladrock "Three days and nights? So a weekend?"
+    MC "I have wandered! And now I have arrived. To my final resting place."
+    show Gladrock worryh
+    Gladrock "You're not a ghost, are you? Because I'm afraid %(tname)s is not fully equipped to meet the needs of the undead."
+    show Gladrock confusedh
+    MC "Not dead, oh wise warlock. Very much alive."
+    show Gladrock happyh
+    Gladrock "I see. So, you are cursed, you say?"
+    show Gladrock happyh at sleft, hop
+    Gladrock "Point me toward the villain that has hexed you!"
+    show Gladrock happyh at sright, hop
+    Gladrock "I will make short work of them."
+    show Gladrock happyh at center with move
+    MC "No, no not that kind of curse. The curse...of ambition! I have long labored under this hex, for it is a formidable curse indeed. I am afraid that I am doomed—no, destined, to assume the office that haunts my dreams!"
+    show Gladrock confusedh
+    Gladrock "Mayor?"
+    MC "Exactly!"
+    show Gladrock happyh
+    Gladrock "I see. Well, I must offer my congratulations to you. You have reached us just in time for the hour of our mayoral race. Our election be on the very next week."
+    MC "It be next week? Oh. I did think I had a bit more time."
+    Gladrock "The residents of this great and legendary town will be pleased that someone as illustrious as yourself has come to try their luck in this grand competition: the municipal election! Tell me, what has prepared you to assume this noble office? What life experiences do you bring to our embattled and everlasting town?"
+    MC "I bring a lifetime of political expertise! You see, old warlock, I have thrown my name into the proverbial ring, as it were—as in, I have run for mayor—not once, not twice, not thrice, but ten times!"
+    show Gladrock worryh at center, sink
+    Gladrock "Ten...ten times? Have you ever...won a race?"
+    MC "I don't trouble myself with the particulars. I travel, eternally traveling, running in each race that I come across. I have yet to find success. But then I heard that %(tname)s was having a race and I thought, yes, this is the one! The one I have been waiting for! My time has finally come."
+    Gladrock "...I see."
+    show Gladrock happyh at center, rise
+    Gladrock "Well I commend your strength of character. We most definitely need a hero in this town, for %(tname)s has long been threatened by three villains of the most fearsome kind."
+    MC "Three villains? A quest, at last! Tell me about these horrors, wise wizard."
+    Gladrock "The first is a dragon, a beast whose terrifying reign has gone unchallenged. He has kidnapped a fair maiden from the marketplace and he keeps her locked up in a tower in the forest."
+    MC "A fair maiden? Locked in a tower? That's wonderful!"
+    show Gladrock confusedh
+    "..."
+    MC "I mean *cough* that's terrible. I'm so sorry to hear it."
+    show Gladrock angryh
+    Gladrock "The next villain is a giant, an enormous monster that threatens to destroy our town. His strength is unmatched by anyone, so we have been unable to defeat him."
+    show Gladrock worryh
+    MC "Sounds terrifying! This is great! Ah—awful. I meant to say awful."
+    show Gladrock angryh
+    Gladrock "I have saved this villain for last because I sense he will pose the most threat to your plan. Our town is plagued by a demon! And he has decided to make a grab for power...by running for mayor."
+    MC "A demon is running for mayor? My sources were correct, this campaign will be a breeze! Point me towards the town's center! I plan to start campaigning right away."
+    show Gladrock happyh at center, hop
+    Gladrock "Follow me then, oh weary wanderer. The town of %(tname)s welcomes you!"
+    hide Gladrock with moveoutright
+    #scene marketplace with fade
+    MC "Hold on, did that sign say... '%(tname)s: Home of Gladrock the Wet'?"
+    show Gladrock angryh with dissolve
+    Gladrock "Wise. It was meant to say Wise. Typo."
+    MC "How outrageous. Mistakes of that nature won't happen when I'm in charge."
+    show Gladrock happyh
+    Gladrock "Happy days! In that case may I suggest that changing the sign become a priority for your mayoral administration? You'd have my vote, oh fine, visionary candidate."
+    MC "I'll think about it."
+    Gladrock "Please do, oh ingenious visitor. Come out to greet me any time you wish to discuss this matter further. In the meantime, this is where I shall leave you. I must stand watch at the entrance to welcome other travelers, such as yourself."
+    MC "Do you get visitors often?"
+    Gladrock "About once or twice a year. So you see, my job is of utmost importance."
+    MC "I do see. Well, farewell Gladrock the Wise. My destiny awaits me!"
+    scene black
+    call screen map
