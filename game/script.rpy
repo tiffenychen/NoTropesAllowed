@@ -5,6 +5,7 @@
 define Eaden = Character("Eaden")
 define Kaelin = Character("Kaelin")
 define Nhom = Character("Nhom")
+define Litt = Character("Litt")
 define Jinglu = Character("Jinglu")
 define Meraline = Character("Meraline")
 define Gladrock = Character("Gladrock")
@@ -58,9 +59,12 @@ transform offscreen:
 image bg forest:
     zoom .5
     "forest.jpg"
+image bg tavern:
+    zoom 1.42
+    "tavern.jpg"
 
-#Eaden images
-image Eaden happy:
+#Eadan images
+image Eadan happy:
     zoom .35
     "Eadan_happy.png"
 image Eaden sad:
@@ -170,6 +174,26 @@ image Gladrock worry:
     "Gladrock_worry.png"
 image Gladrock = "Gladrock_icon.png"
 
+#Nhom images
+image Nhom angry:
+    zoom .4
+    "Nhom_angry.png"
+image Nhom confused:
+    zoom .4
+    "Nhom_confused.png"
+image Nhom happy:
+    zoom .4
+    "Nhom_happy.png"
+image Nhom neutral:
+    zoom .4
+    "Nhom_neutral.png"
+image Nhom sad:
+    zoom .4
+    "Nhom_sad.png"
+
+image Nhom = "Nhom_icon.png"
+
+
 #textbutton tr["fr"].music[k] action [mr.Play(music[k]), SelectedIf(renpy.music.get_playing() == music[k])] style "map_label" text_style "map_label_button_text"
 
 
@@ -203,7 +227,7 @@ label start:
 
     scene black
     "I've been traveling for days and I'm finally here..."
-    $ tname = renpy.input("The town of:")
+    $ t = renpy.input("The town of:")
     if tname == "":
         $tname = "Nowheresville"
     MC "The town of %(tname)s awaits me."

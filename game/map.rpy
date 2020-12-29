@@ -2,9 +2,7 @@ image bg black = "#000000"
 image bg castle:
     zoom 0.8
     "castle.jpg"
-image bg tavern:
-    zoom 1.2
-    "tavern.jpg"
+
 
 screen map():
     add "Map.jpg" xzoom 0.7 yzoom 0.4 #zoom 0.45
@@ -77,7 +75,7 @@ label tailors:
     return
 label tavern:
     scene bg tavern
-    MC "We've arrived at the tavern"
+    jump Nhom_handler
     return
 
 screen mapicon:
