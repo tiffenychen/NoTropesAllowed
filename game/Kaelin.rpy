@@ -23,8 +23,10 @@ label Kaelin_beg:
     show Kaelin at center, rise
     "She shifts the sack higher onto her shoulder."
     w "Whatever you saw here, you didn't."
+    show Kaelin_angry
     "She gives you a meaningful look, and you hold your hands up in surrender."
     MC "I'm not here to make trouble."
+    show Kaelin
     w "Hah, here near the arena or here in this town?"
     "Do you really stand out that much?"
     show Kaelin at center, shake 
@@ -33,7 +35,7 @@ label Kaelin_beg:
     MC "I... Didn't know it was that obvious."
     w "Oh, it's extremely obvious."
     show Kaelin:
-        zoom 1.5 
+        zoom 1.2 
         linear 0.5 xalign 0.9 yalign 1.0  
     "She moves extremely quickly and gets right up in your face, blocking your path to safety."
     w "And because of that, I don't trust you."

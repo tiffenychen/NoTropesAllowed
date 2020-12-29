@@ -10,6 +10,7 @@ define Jinglu = Character("Jinglu")
 define Meraline = Character("Meraline")
 define Gladrock = Character("Gladrock")
 define MC = Character("Me")
+define Gambler = Character("Gambler")
 define w = Character("???")
 
 #character transforms
@@ -217,9 +218,12 @@ image Nhom:
     zoom .75
     "Nhom_icon.png"
 #Kaelin images
+image Kaelin angry:
+    zoom 1.0
+    "Kaelin_angry.png"
 image Kaelin:
-    zoom .5
-    "Meraline_happy.png"
+    zoom 1.0
+    "Kaelin.png"
 
 
 
