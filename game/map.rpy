@@ -61,7 +61,7 @@ label forest:
     return
 label guardpost:
     scene bg castle
-    MC "We've arrived at the guard post"
+    jump Gladrock_handler
     return
 label marketplace:
     scene bg castle
@@ -69,7 +69,7 @@ label marketplace:
     return
 label port:
     scene bg castle
-    MC "We've arrived at the port"
+    jump Meraline_handler
     return
 label tailors:
     scene bg castle
