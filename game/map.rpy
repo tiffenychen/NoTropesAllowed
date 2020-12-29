@@ -27,7 +27,7 @@ screen map():
         image "Jinglu_icon.png" xpos 750 ypos 300
     elif charProgress['Jinglu'] == 2:
         image "Jinglu_icon.png" xpos 980 ypos 0
-
+    image "Nhom_icon.png" xpos  500 ypos 330
     image "Eadan_icon.png" xpos 550 ypos 400
     #$ place_chars()
     #imagebutton auto "buttons/exit%s.png" xpos  415 ypos 550 focus_mask True action Jump('castle'), Hide("Anotherscreen") hovered Show("Anotherscreen") unhovered Hide("Anotherscreen")
