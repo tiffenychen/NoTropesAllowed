@@ -75,7 +75,7 @@ label Jinglu_med:
     show Jinglu worry at sleft with dissolve
     "You look over toward the second person"
     hide Jinglu worry
-    scene bg castle with Fade(.25, 0, .75, color="#fff")
+    scene bg castle with Fade(.25, 0, .75, color="#000")
     "and quickly duck back, heart pounding when you realize who the pair might be."
     "That second person perfectly matches the description of Jinglu that Nhom gave you."
     "And if he's meeting the person who advertises any service for a price..."

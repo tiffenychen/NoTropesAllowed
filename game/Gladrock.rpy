@@ -9,7 +9,7 @@ label Gladrock_handler:
         $ renpy.jump("Gladrock" + storyTag[charProgress["Gladrock"]])
 
 label Eaden_handler:
-    if ((charProgress["Gladrock"] == 1 or charProgress["Gladrock"] == 2) and charProgress["Gladrock"] == 0):
+    if ((charProgress["Gladrock"] == 1 or charProgress["Gladrock"] == 2) and charProgress["Eadan"] == 0):
         jump Gladrock_end
     else:
         "Nobody seems to be here right now."

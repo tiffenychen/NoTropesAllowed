@@ -58,7 +58,7 @@ transform offscreen:
 #backgrounds
 image bg arena:
     zoom 1.7
-    "arena.jpg" 
+    "arena.jpg"
 image bg forest:
     zoom .5
     "forest.jpg"
@@ -66,20 +66,20 @@ image bg tavern:
     zoom 1.42
     "tavern.jpg"
 image bg cave:
-    zoom 1.5 
+    zoom 1.5
     "cave.jpg"
 image bg marketplace:
     zoom 2.8
     "marketplace.jpg"
 image bg shrubbery:
-    zoom 0.8 
+    zoom 0.8
     "shrubbery.jpg"
 image bg dunny_table:
-    zoom 2.8 
+    zoom 2.8
     "thundrone_estate.jpg"
 
 #Eadan images
-image Eadan happy:
+image Eaden happy:
     zoom .35
     "Eadan_happy.png"
 image Eaden sad:
