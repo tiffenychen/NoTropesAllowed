@@ -1,14 +1,18 @@
 define Janet = Character("Janet")
 
 label Gladrock_handler:
-    if charProgress["Gladrock"] == 3:
+    if charProgress["Gladrock"] == 2 and charProgress["Eadan"] == 1:
         "It looks like there's nobody here right now."
         scene black
         call screen map
     else:
         $ renpy.jump("Gladrock" + storyTag[charProgress["Gladrock"]])
 
-
+label Eaden_handler:
+    if ((charProgress["Gladrock"] == 1 or charProgress["Gladrock"] == 2) and charProgress["Gladrock"] == 0):
+        jump Gladrock_end
+    else:
+        "Nobody seems to be here right now."
 
 label Gladrock_beg:
     #scene __ with flash
@@ -184,177 +188,94 @@ label Gladrock_beg:
     show Eaden sorry
     Eaden "I suppose so. If that's what you want. I had hoped you might reconsider."
     MC "Huh?"
-    #UNFINISHED
+    Gladrock "Princess—"
+    show Gladrock confusedh
+    Janet "Stop. Start over."
+    Gladrock "Oh Janet, please cure us of our ignorance. Has this dragon not been keeping you here?"
+    show Gladrock happyh
+    Janet "Nope. I just wanted some time to plan for my future as an explorer and have some space to myself. I was feeling suffocated at home—working in the bakery is an exhausting job. Then I had this idea—faked my own kidnapping and everything. Pretty good, right?"
+    MC "Your father's heart was broken by your kidnapping! How could you tell a lie like this?"
+    Janet "Have you met him? Because if you had, I think you'd be reassured. I mean, he's great and everything but a little spacey. Pretty sure he still thinks I went off to college in Lispor like I originally told him."
+    show Eaden annoyed
+    MC "So...we came here...for nothing? What am I going to tell people? I promised to slay the dragon!"
+    Janet "Well, I've been thinking it's about time for me to come clean anyway. Deceiving the whole town was fun for a while and all, but it's getting old to have knights showing up all the time banging down the door. Even if you all are the most ineffectual knights I've ever seen."
+    MC "We're not knights! Gladrock is a warlock and I—I am the candidate for mayor of this great township!"
+    Janet "{i}Mayor?{/i} We have one of those?"
+    Gladrock "It's been introduced in the last few years, damsel. We finally hit the sixty person threshold while you were in the tower."
+    Janet "Wow. Guess things really have changed."
+    show Gladrock sadh
+    show Eaden sorry
+    "Gladrock looks dejected. Eaden looks thoughtful. You wonder if it would be rude to ask the dragon to carry you to %(tname)s on his back."
+    Eaden "If it is your time to go, oh damsel, then it is my time as well. I have spent many years in this tower enjoying the solitude. But now I think I am ready to do something more with my life—something that has meaning in the world."
+    "You groan. Looks like Eaden isn't coming back with you after all."
+    show Eaden happy
+    Eaden "Where to first, Janet? I will take you there and then figure out my own fate."
+    hide Eaden with moveoutright
+    show Gladrock sadh at center with move
+    "As Janet and Eaden talk, you turn to Gladrock."
+    MC "Guess it's time for us to head back to town? Gotta admit, that was anticlimactic."
+    "The two of you walk back through the forest. The light is coming back now and it is overwhelming to your eyes, which have gotten used to darkness."
+    Gladrock "You know, that was the most alive I've felt in a while."
+    show Gladrock happyh
+    Gladrock"Hiking through the woods, participating in the action—it's not something you do much as a warlock. People expect you to spend all your time studying or casting spells. There's not room for much else in my life."
+    MC "Maybe you should consider a career change."
+    Gladrock "Maybe. Maybe someday."
     $ charProgress["Gladrock"] +=1
     jump ending_handler
 
 label Gladrock_med:
-    "You decide to go by the port again with a suit you plan on wearing for a rally later to check in with Gladrock."
-    show Gladrock happy:
-        zoom .75
-        yalign 1.0
-        xalign 2.0
-        linear .5 xalign 1.3
-    "You find her in the same spot as before, except that she's no longer shouting her services. Instead, she's sitting, quietly sewing."
-    show Gladrock happy:
-        linear .5 xalign .5
-        linear .3 zoom 1.0
-    "As you approach, she acknowledges your presence from her deep concentration with a simple nod."
-    MC "Hi Gladrock, how are you doing?"
-    show Gladrock ehappy
-    Gladrock "I'm doing great! Business is picking up, people seem to be stopping by a lot more. I'm actually working on someone's custom order right now, so you'll have to wait a minute."
-    show Gladrock happy
-    MC "I have time to spare."
-    "You do, in fact, have time to spare, even though you have no one else working on your mayoral campaign. Sad."
-    "You stand around on the port for a few minutes. You notice she's sewing two pieces of brightly colored pieces of fabric together."
-    MC "What are you working on?"
-    show Gladrock ehappy
-    Gladrock "Oh, this? It's a costume for a boxer. He wants me to make a cape and some shorts for a rebrand of his image."
-    "The clothes shimmers in yellow and purple. It looks garish, but the stitchwork is immaculate."
-    show Gladrock happy
-    MC "Which boxer? I follow boxing occasionally."
-    Gladrock "It's Roxolometer. Do you know him?"
-    MC "Yes! Isn't he a gnome? I love watching his fights when I can."
-    show Gladrock unsure
-    "This seems to bum her out."
-    show Gladrock sad
-    Gladrock "I wish I could see one, they look so exciting..."
-    MC "You should! They're so exciting, and the energy of the crowd..."
-    show Gladrock happy
-    Gladrock "Did you know that he started boxing when he was 400 years old?"
-    MC "I didn't, that's pretty old!"
-    show Gladrock ehappy
-    Gladrock "Yeah, and now he's one of the best."
-    show Gladrock happy
-    Gladrock "You know, before boxing, Roxolometer was really, really good at farming, something about being the bringer of good crops. You know, it's a gnome thing."
-    show Gladrock unsure
-    "You nod, and she sighs deeply."
-    Gladrock "So he had this giant farm with all of his children working on it with him and they were raking in money, you know?"
-    Gladrock "I think he was selling some kind of magical mushroom, and it was super expensive, but then, all of a sudden, he decides to go into boxing."
-    show Gladrock happy
-    Gladrock "Joins a professional league right away, even though he had absolutely no experience."
-    Gladrock "Obviously, he had a rough time starting off, but then he got good."
-    show Gladrock ehappy
-    Gladrock "He got really good."
-    show Gladrock unsure
-    "She looks at you, hands limply holding the fabric now."
-    show Gladrock sad
-    Gladrock "Talking with him made me really think about what I do for a living."
-    Gladrock "You know, being a tailor is not fun, especially as a mermaid."
-    show Gladrock angry
-    Gladrock "We don't like changing clothes! I do because it's part of my job, but most people just wear some shells or whatever for life."
-    Gladrock "Which, you know, is a long time."
-    Gladrock "So I have to deal with other races all the time and you all don't understand what it's like for beings that need to be in water all the time."
-    Gladrock "If I'm not at least partially submerged at any time, I will shrivel up and die in a few minutes."
-    show Gladrock angry at shake
-    Gladrock "But you stupid humans cannot understand that, so you build all your towns close enough to water to talk to us, but we can't actually engage in any meaningful conversation or exchange unless you have a lot of money like those folks."
-    "She points at some merpeople in tanks, clearly envious. then she sighs."
-    show Gladrock sad
-    Gladrock "Sorry for ranting about this all to you, very clearly one of the stupid humans I mentioned, I didn't mean to call you stupid."
-    show Gladrock unsure
-    Gladrock "My business is looking up, but I..."
-    "She trails off wistfully, then looks back at the pieces of clothing in front of her."
-    show Gladrock sad
-    Gladrock "I wonder if there's something out there more suited for me."
-    MC "Maybe you should try something else out? There are plenty of other professions out there."
-    MC "You could take a break from tailoring for a while to go and try things out."
-    Gladrock "Are you kidding? With the amount of business I'm finally getting?"
-    Gladrock "If I take a few more orders I can even buy one of those fancy tanks, and then business will really start taking off."
-    show Gladrock unsure
-    "You nod, looking around."
-    show Gladrock sad
-    MC "Hey, it seems like you're busy with Roxolometer's order, so I'll come back another day."
-    "She nods glumly as you wave goodbye."
-    Gladrock "See you around."
-    show Gladrock unsure
-    "She slowly waves back, then continues to sew the fabric together."
+    show Gladrock sad at center
+    "Gladrock is standing in the town center, looking lost. You approach him."
     hide Gladrock with dissolve
+    show Gladrock happyh with dissolve
+    Gladrock "Hail thee, mayoral candidate of our great and noble province. How goes it with you?"
+    MC "It goes, warlock. I have been on many adventures here. How goes it with you? Last time I saw you, we were fighting the dragon."
+    show Gladrock sadh
+    Gladrock "Yes, yes. Well, I'll admit, I have been doing some soul searching. And crystal ball gazing but all that turned up was a weather forecast."
+    MC "Soul searching about what?"
+    show Gladrock sadh at sink
+    Gladrock "I'm having a difficult time focusing on my work. All I want to do these days is get out there again and do something physical, but I'm stuck here instead poring over books."
+    menu:
+        "Just keep up what you're doing, I'm sure your passion for your work will come back eventually.":
+            show Gladrock happyh at rise
+            Gladrock "You're right. I suppose I'll just keep on doing what I've been doing."
+            MC "Good on you, Gladrock!"
+            show Gladrock happyh at center, hop
+            Gladrock "I suppose this sense of perennial dissatisfaction and existential dread wears off eventually."
+        "Maybe it's time for you to change things up. I saw a poster for a triathlon in the square. Do you have any interest in doing that?":
+            show Gladrock happyh at rise
+            Gladrock "Now that you mention it, I saw that myself! Maybe that would be something I could do. Do you really think I could do it?"
+            MC "Sure you can! I've seen you not even break a sweat on that hike through the woods we did. With the right training I think you'd be a real competitor. Not to mention the fact that there's probably only two other competitors in this whole town."
+            show Gladrock happyh at center, hop
+            Gladrock "Thanks. It means a lot to hear you say that."
     $ charProgress["Gladrock"] +=1
     jump ending_handler
 
 label Gladrock_end:
-    "You finally get some time again to go down to the port and find Gladrock to mend your suit, quietly willing her to be in a better mood than she was when you last saw her."
-    show Gladrock happy:
-        zoom .75
-        yalign 2.0
-        xalign .5
-        linear .4 yalign 1.0
-    "You approach her stand by the port, and see that she's only started laying out her supplies."
-    show Gladrock ehappy:
-        linear .5 zoom 1.0
-    Gladrock "Oh hi! Nice to see you again."
-    show Gladrock happy
-    MC "Yeah, I didn't get to ask you to mend something last time. Can you fix up this suit of mine? There are a lot of moth holes."
-    Gladrock "Of course! Let me just finish up what I'm working on."
-    "She seems to be making some sort of sack, large enough to fit several objects into."
-    MC "So, how are you doing?"
-    show Gladrock sad
-    "She heaves a deep sigh."
-    "You brace yourself for more woes."
-    show Gladrock happy
-    Gladrock "You know, I can't complain. Business is doing great, and Roxolometer loved his costume and even asked me to come see a match!"
-    show Gladrock ehappy
-    Gladrock "The energy and the excitement, and the noise!"
-    "She smiles with the memory."
-    show Gladrock happy
-    Gladrock "I loved it. I was buzzed from that match for days afterwards, I couldn't stop talking to everyone about it."
-    MC "They're so exciting!!! You finally got to go!"
-    show Gladrock sad
-    "She smiles, but her excitement dims, and she goes back to stitching a hole in the bag."
-    Gladrock "But I can't go watch boxing matches all the time. I have a job, and I need to make money."
-    show Gladrock unsure
-    Gladrock "I really wish I could, but..."
-    show Gladrock sad
-    "She sews silently for some time, and finishes making the bag. She puts it down and looks up at you."
+    show Eaden sad at center
+    "Eaden is back in town, perched on the road looking aimless. You go up to him."
+    MC "Hi, Eaden. I wasn't expecting to see you again."
+    Eaden "Yeah, I've been feeling pretty restless. Thought coming back here would give me some perspective."
+    show Eaden sorry
+    Eaden "Now that Janet's gone I just feel this gap in my life, like there's some meaning that's been taken away. I want to do something meaningful again, but I don't know what to do."
     menu:
-        "Encourage her to pursue boxing":
-            MC "Gladrock, I'm sure you have more options than you think you do."
-            MC "What about training for boxing or something when you have the time?"
-            show Gladrock sad
-            Gladrock "I guess I could..."
-            MC "It doesn't hurt to try!"
-            show Gladrock unsure
-            Gladrock "I don't know..."
-            MC "Hey listen,{w}it might be scary, but you seriously seem quite unhappy at your current job. Why not try something new?"
-            show Gladrock sad
-            Gladrock "Hey, you're right. I really am unhappy now."
-            "She puts the sewing down, and looks at her hands."
-            Gladrock "Everything I've been doing now, all of the work I've done, it's all been for other people, not for me."
-            Gladrock "Why am I still stitching and mending clothes for other people? I should be chasing my own dreams."
-            show Gladrock happy
-            MC "Yeah! You should go and find what makes you happy."
-            MC "What's the point of life if you aren't trying to strive towards happiness?"
-            show Gladrock ehappy
-            Gladrock "You're right!"
-            show Gladrock happy
-            "There are sparks in her eyes now, and she looks determined to change."
-            Gladrock "Thanks so much! You've been such a great help."
-            show Gladrock ehappy
-            Gladrock "And now I'm going to go figure out what to do with my life! Probably boxing!"
-            show Gladrock ehappy:
-                linear .2 yalign 10.0
-            "She dives into the ocean, leaving all of her supplies behind."
-            hide Gladrock
-            MC "Wait, could you maybe fix my-?"
-            "Your sentence stops short when you realize that she is too far to hear you. You sigh and leave the port."
-            "Despite not getting your suit mended, you feel like you did something good today."
-            $ charProblems["Gladrock"] = True
-        "Ask her to mend your suit":
-            MC "Would you mind mending my suit? I need it for a rally I'm doing soon, and it's not looking great."
-            show Gladrock happy
-            Gladrock "Sure, no problem!"
-            "She takes the suit from you and starts to mend it. She very quickly patches the holes and hands it back to you."
-            show Gladrock ehappy
-            Gladrock "There! It's done."
-            show Gladrock happy
-            MC "Thanks so much, this is great."
-            Gladrock "No worries."
-            MC "How much do I owe you?"
-            show Gladrock ehappy
-            Gladrock "Oh, this one is free, for the generous amount you gave me the first time."
-            MC "Really? Thanks!"
-            show Gladrock happy
-            "As you start walking away, another person approaches Gladrock with something to mend. She takes it and starts at her work again."
-            hide Gladrock with moveoutleft
-    $ charProgress["Gladrock"] +=1
+        "You know, knighthood is always an option for restless people who want to make a difference.":
+            "It's not all rescuing princesses, you know. There's real change that can be made if you do it right."
+            show Eaden confused
+            Eaden "Knighthood? But, I'm a dragon."
+            MC "And? There's a first for everything. I personally think you'd make a great knight. I believe in you."
+            show Eaden sorry
+            Eaden "Wow, I'd never even thought that could be an option."
+            show Eaden happy
+            Eaden "Maybe it's worth looking into. Thanks for your advice."
+        "Have you thought about working in a bakery? I bet Janet's dad would appreciate an assistant with real life fiery breath, huh?":
+            show Eaden confused
+            Eaden "Um, no. How would that be making a difference?"
+            MC "It'd make a difference for this town's supply of scones! I mean five per day, come on! I have to be there when it opens to even hope to get one."
+            show Eaden sad
+            Eaden "Right, well. Not something I really considered before."
+            show Eaden happy
+            Eaden "But...uh, thanks for your thoughts."
+            MC "No problem, Eaden! Solving people's problems is just what I do."
+    $ charProgress["Eadan"] +=1
     jump ending_handler

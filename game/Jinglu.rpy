@@ -9,33 +9,55 @@ label Jinglu_handler:
 label Jinglu_beg:
     "It's really about time you stop by the marketplace to get some groceries for yourself. And right now, your road travel rations are starting to dwindle and you figure a quick break for some shopping won't hurt."
     "You scan the limited stall options, trying to figure out where to start your new stockpile, and land on fresh veggies first—you've had to eat a disturbing amount of jerky and hardtack while on the road, so you need the change."
+    show Nhom neutral at center with moveinleft
     "Unfortunately, a dwarf makes it to the stall slightly before you and you're forced to wait behind him."
     w "Didn't you just restock yesterday, Nhom?"
+    show Nhom angry
     Nhom "Aye. A certain demon put a dent in that though."
     w "Oh, haha, which of the kids was it this time?"
-    Nhom "No, I mean Jinglu. It's a real shame no one's had the guts to deal with him yet."
+    show Nhom confused
+    Nhom "No, I mean Jinglu."
+    show Nhom angry
+    Nhom "It's a real shame no one's had the guts to deal with him yet."
     w "Aren't you an adventurer...?"
+    show Nhom neutral
     Nhom "Yes, well... You know how it is."
     w "I'm not sure I do?"
+    show Nhom sad
     "You decide to valiantly step in as Nhom flounders a little for a response."
+    show Nhom neutral
     MC "Excuse me, but I couldn't help overhearing that there's an issue with a demon?"
+    show Nhom angry
     "Nhom turns to you and huffs, clearly annoyed just thinking about the situation."
     Nhom "Aye, that would be correct. He took down my house and most of the stuff inside it last night. It was lucky no one else was home or they surely would have been crushed in the debris."
     "You try to put on a very sympathetic look instead of a horrified one."
+    show Nhom neutral
     MC "That's terrible! Can I come help you fix things up?"
     "Nhom waves his hand dismissively"
-    Nhom "Oh, don't worry about it. I already had a fair few helpers fix up most of it. The structural damage wasn't as bad as I had expected with the amount of house that was spread out everywhere, so I suppose it could be worse. We did everything back up real quick and that's why I'm out shopping now."
-    MC "Oh, can you at least tell me what he looks like, so I know who to watch out for?"
-    #show Nhom at sleft with move
-    show Jinglu angry at extend_dissolve
-    Nhom "You can't miss him. {w} Shady looking fellow {w} with some twiggy horns and hooves. {w} He's always wearing a lot of fancy clothes. {w} I'm surprised he doesn't get all tangled up in when he runs off after his misdeeds."
+    Nhom "Oh, don't worry about it. I already had a fair few helpers fix up most of it. The structural damage wasn't as bad as I had expected with the amount of house that was spread out everywhere, so I suppose it could be worse."
+    Nhom "We did everything back up real quick and that's why I'm out shopping now."
+    MC "Oh, can you at least tell me what he looks like, so I know for the future?"
+    show Nhom angry at left with move
+    show Jinglu angryh:
+        xalign .75
+        alpha 0.0
+        linear 4.0 alpha 1.0
+        on replace:      # when new image appears
+            alpha 0.0
+            linear 4.0 alpha 1.0
+        on replaced:     # when old image disappears
+            linear 4.0 alpha 0.0
+    Nhom "You can't miss him. {w} Shady looking fellow {w}with some twiggy horns and hooves. {w}He's always wearing a lot of fancy clothes. {w}I'm surprised he doesn't get all tangled up in when he runs off after his misdeeds."
     hide Jinglu
-    #show Nhom at center with MoveTransition(.1)
+    show Nhom angry at center with move
     MC "He ran off?"
+    show Nhom neutral
     Nhom "Always does, probably knows he can't handle a real confrontation."
     MC "I see. Well, thanks so much for sharing! I'll keep my eyes peeled and see if I can't do anything about him!"
+    show Nhom neutral at center, hop
     Nhom "You do that. I'll see you around."
     "Nhom picks up the bags of items the shopkeeper was filling while you two talked. It's a lot and you're surprised the shopkeeper knew what Nhom would want. Perks of living in a small village you suppose."
+    hide Nhom with moveoutleft
     "You then realize you didn't think about what vegetables you would want the entire time you were waiting your turn."
     MC "Uh.... Could I get-"
     $ charProgress["Jinglu"] +=1
@@ -51,8 +73,10 @@ label Jinglu_med:
     "That's suspicious. You decide to peek out and see who else in this town is being suspicious aside from you."
     "Is that... The person on the poster? Kaelin was it? And..."
     show Jinglu worry at sleft with dissolve
-    "You look over toward the second person and quickly duck back, heart pounding when you realize who the pair might be."
+    "You look over toward the second person"
     hide Jinglu worry
+    scene bg castle with Fade(.25, 0, .75, color="#fff")
+    "and quickly duck back, heart pounding when you realize who the pair might be."
     "That second person perfectly matches the description of Jinglu that Nhom gave you."
     "And if he's meeting the person who advertises any service for a price..."
     "You thank your lucky stars you hid."
