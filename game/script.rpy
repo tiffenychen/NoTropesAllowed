@@ -2,7 +2,7 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-define Eadan = Character("Eadan")
+define Eaden = Character("Eaden")
 define Kaelin = Character("Kaelin")
 define Nhom = Character("Nhom")
 define Litt = Character("Litt")
@@ -31,7 +31,6 @@ transform rise: #character comes back up form a sink
     linear .1 yalign 1.0
 transform shake:
         yalign 1.0
-        xalign .75
         ease .06 xoffset 8
         ease .06 xoffset -8
         ease .05 xoffset 2
@@ -63,26 +62,27 @@ image bg forest:
 image bg tavern:
     zoom 1.42
     "tavern.jpg"
+
 #Eadan images
 image Eadan happy:
     zoom .35
     "Eadan_happy.png"
-image Eadan sad:
+image Eaden sad:
     zoom .35
     "Eadan_sad.png"
-image Eadan confused:
+image Eaden confused:
     zoom .35
     "Eadan_confused.png"
-image Eadan sorry:
+image Eaden sorry:
     zoom .35
     "Eadan_sorry.png"
-image Eadan angry:
+image Eaden angry:
     zoom .35
     "Eadan_angry.png"
-image Eadan annoyed:
+image Eaden annoyed:
     zoom .35
     "Eadan_annoyed.png"
-image Eadan = "Eadan_icon.png"
+image Eaden = "Eaden_icon.png"
 
 #Jinglu images
 image Jinglu happyh:
@@ -128,19 +128,19 @@ image Jinglu = "Jinglu_icon.png"
 
 #Meraline images
 image Meraline happy:
-    zoom .6
+    zoom .5
     "Meraline_happy.png"
 image Meraline sad:
-    zoom .6
+    zoom .5
     "Meraline_sad.png"
 image Meraline angry:
-    zoom .6
+    zoom .5
     "Meraline_angry.png"
 image Meraline ehappy:
-    zoom .6
+    zoom .5
     "Meraline_ehappy.png"
 image Meraline unsure:
-    zoom .6
+    zoom .5
     "Meraline_unsure.png"
 image Meraline = "Meraline_icon.png"
 
@@ -161,18 +161,19 @@ image Gladrock worryh:
     zoom .55
     "Gladrock_worryh.png"
 image Gladrock happy:
-    zoom .25
+    zoom .4
     "Gladrock_happy.png"
 image Gladrock sil:
-    zoom .25
+    zoom .4
     "Gladrock_sil.png"
 image Gladrock smirk:
-    zoom .25
+    zoom .4
     "Gladrock_smirk.png"
 image Gladrock worry:
-    zoom .25
+    zoom .4
     "Gladrock_worry.png"
 image Gladrock = "Gladrock_icon.png"
+
 #Nhom images
 image Nhom angry:
     zoom .4
@@ -203,14 +204,14 @@ label start:
 
     python:
         charProgress = {
-            "Eadan": 0,
+            "Eaden": 0,
             "Kaelin": 0,
             "Nhom": 0,
             "Gladrock": 0,
             "Meraline": 0,
             "Jinglu": 0}
         charProblems = {
-            "Eadan": False,
+            "Eaden": False,
             "Kaelin": False,
             "Nhom": False,
             "Gladrock": False,
