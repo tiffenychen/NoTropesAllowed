@@ -82,7 +82,9 @@ image Eaden angry:
 image Eaden annoyed:
     zoom .35
     "Eadan_annoyed.png"
-image Eaden = "Eaden_icon.png"
+image Eaden:
+    zoom .75
+    "Eaden_icon.png"
 
 #Jinglu images
 image Jinglu happyh:
@@ -124,7 +126,9 @@ image Jinglu smirk:
 image Jinglu worry:
     zoom .25
     "Jinglu_worry.png"
-image Jinglu = "Jinglu_icon.png"
+image Jinglu:
+    zoom .75
+    "Jinglu_icon.png"
 
 #Meraline images
 image Meraline happy:
@@ -142,7 +146,9 @@ image Meraline ehappy:
 image Meraline unsure:
     zoom .5
     "Meraline_unsure.png"
-image Meraline = "Meraline_icon.png"
+image Meralinei:
+    zoom .75
+    "Meraline_icon.png"
 
 #Gladrock images
 image Gladrock happyh:
@@ -172,7 +178,9 @@ image Gladrock smirk:
 image Gladrock worry:
     zoom .4
     "Gladrock_worry.png"
-image Gladrock = "Gladrock_icon.png"
+image Gladrock:
+    zoom .75
+    "Gladrock_icon.png"
 
 #Nhom images
 image Nhom angry:
@@ -190,8 +198,9 @@ image Nhom neutral:
 image Nhom sad:
     zoom .4
     "Nhom_sad.png"
-
-image Nhom = "Nhom_icon.png"
+image Nhom:
+    zoom .75
+    "Nhom_icon.png"
 
 
 #textbutton tr["fr"].music[k] action [mr.Play(music[k]), SelectedIf(renpy.music.get_playing() == music[k])] style "map_label" text_style "map_label_button_text"
@@ -237,7 +246,8 @@ label start:
     Gladrock "Fare ye well, young traveller!"
     MC "AH! What the?!"
     show Gladrock sadh
-    Gladrock "Terribly sorry, fair pilgrim, I did not mean to startle ye. {w} You, that is."
+    Gladrock "Terribly sorry, fair pilgrim, I did not mean to startle ye. {w}You, that is."
+    $ pname = renpy.input("Actually, my name is:")
     MC "Who are you? Why have you accosted me?"
     show Gladrock confusedh at center, hop
     Gladrock "{i}Accosted?{/i}"

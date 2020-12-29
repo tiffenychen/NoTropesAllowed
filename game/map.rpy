@@ -3,23 +3,22 @@ image bg castle:
     zoom 0.8
     "castle.jpg"
 
-
 screen map():
     add "Map.jpg" xzoom 0.7 yzoom 0.4 #zoom 0.45
     fixed:
         textbutton "CloseMap" xalign 0.5 yalign 0.3 action Hide("map") style "map_label" text_style "map_label_button_text"
     #imagebutton idle "castle.png" xpos  50 ypos 200 action Jump('castle').
-    imagebutton idle "cottage.png" hover "cottage.png"  xpos  900 ypos 200 focus_mask True action [Hide('map'),Jump('arena')]
+    imagebutton idle "m_arena.png" hover "mh_arena.png"  xpos  900 ypos 220 focus_mask True action [Hide('map'),Jump('arena')]
     imagebutton idle "cottage.png" hover "cottage.png"  xpos  900 ypos 350 focus_mask True action [Hide('map'),Jump('bakery')]
-    imagebutton idle "cottage.png" hover "cottage.png"  xpos  150 ypos 30 focus_mask True action [Hide('map'),Jump('cave')]
+    #imagebutton idle "cottage.png" hover "cottage.png"  xpos  150 ypos 30 focus_mask True action [Hide('map'),Jump('cave')]
     imagebutton idle "cottage.png" hover "cottage.png"  xpos  280 ypos 350 focus_mask True action [Hide('map'),Jump('castle')]
-    imagebutton idle "cottage.png" hover "cottage.png"  xpos  130 ypos 150 focus_mask True action [Hide('map'),Jump('cottage')]
-    imagebutton idle "cottage.png" hover "cottage.png"  xpos  980 ypos 0 focus_mask True action [Hide('map'),Jump('forest')]
-    imagebutton idle "cottage.png" hover "cottage.png"  xpos  550 ypos 400 focus_mask True action [Hide('map'),Jump('guardpost')]
-    imagebutton idle "cottage.png" hover "cottage.png"  xpos  750 ypos 300 focus_mask True action [Hide('map'),Jump('marketplace')]
-    imagebutton idle "cottage.png" hover "cottage.png"  xpos  1100 ypos 490 focus_mask True action [Hide('map'),Jump('port')]
+    imagebutton idle "m_cottage.png" hover "mh_cottage.png"  xpos  95 ypos 150 focus_mask True action [Hide('map'),Jump('cottage')]
+    imagebutton idle "m_forest.png" hover "mh_forest.png"  xpos  1000 ypos -20 focus_mask True action [Hide('map'),Jump('forest')]
+    imagebutton idle "m_guardpost.png" hover "mh_guardpost.png"  xpos  220 ypos 410 focus_mask True action [Hide('map'),Jump('guardpost')]
+    imagebutton idle "m_marketplace.png" hover "mh_marketplace.png"  xpos  680 ypos 310 focus_mask True action [Hide('map'),Jump('marketplace')]
+    imagebutton idle "m_port.png" hover "mh_port.png"  xpos  1150 ypos 600 focus_mask True action [Hide('map'),Jump('port')]
     imagebutton idle "cottage.png" hover "cottage.png"  xpos  840 ypos 400 focus_mask True action [Hide('map'),Jump('tailors')]
-    imagebutton idle "cottage.png" hover "cottage.png"  xpos  500 ypos 330 focus_mask True action [Hide('map'),Jump('tavern')]
+    imagebutton idle "m_tavern.png" hover "mh_tavern.png"  xpos  500 ypos 300 focus_mask True action [Hide('map'),Jump('tavern')]
 
     showif charProgress['Jinglu'] == 0 and sum(charProgress.values()) > 2:
         image "Jinglu_icon.png" xpos 750 ypos 300
@@ -28,7 +27,10 @@ screen map():
     elif charProgress['Jinglu'] == 2:
         image "Jinglu_icon.png" xpos 980 ypos 0
     image "Nhom_icon.png" xpos  500 ypos 330
-    image "Eadan_icon.png" xpos 550 ypos 400
+    showif ((charProgress["Gladrock"] == 1 or charProgress["Gladrock"] == 2) and charProgress["Gladrock"] == 0):
+        image "Eadan_icon.png" xpos 550 ypos 400
+    showif charProgress['Meraline'] != 3:
+        image "Meraline_icon.png" xpos 1100 ypos 550
     #$ place_chars()
     #imagebutton auto "buttons/exit%s.png" xpos  415 ypos 550 focus_mask True action Jump('castle'), Hide("Anotherscreen") hovered Show("Anotherscreen") unhovered Hide("Anotherscreen")
     #vbox xalign 1.0 yalign 1.0:
