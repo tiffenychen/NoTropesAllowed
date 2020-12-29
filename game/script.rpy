@@ -226,7 +226,7 @@ label start:
 
     scene black
     "I've been traveling for days and I'm finally here..."
-    $ t = renpy.input("The town of:")
+    $ tname = renpy.input("The town of:")
     if tname == "":
         $tname = "Nowheresville"
     MC "The town of %(tname)s awaits me."
