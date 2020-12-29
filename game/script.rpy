@@ -56,12 +56,27 @@ transform offscreen:
     xalign 1.4
 
 #backgrounds
+image bg arena:
+    zoom 1.7
+    "arena.jpg" 
 image bg forest:
     zoom .5
     "forest.jpg"
 image bg tavern:
     zoom 1.42
     "tavern.jpg"
+image bg cave:
+    zoom 1.5 
+    "cave.jpg"
+image bg marketplace:
+    zoom 2.8
+    "marketplace.jpg"
+image bg shrubbery:
+    zoom 0.8 
+    "shrubbery.jpg"
+image bg dunny_table:
+    zoom 2.8 
+    "thundrone_estate.jpg"
 
 #Eadan images
 image Eadan happy:
@@ -201,6 +216,11 @@ image Nhom sad:
 image Nhom:
     zoom .75
     "Nhom_icon.png"
+#Kaelin images
+image Kaelin:
+    zoom .5
+    "Meraline_happy.png"
+
 
 
 #textbutton tr["fr"].music[k] action [mr.Play(music[k]), SelectedIf(renpy.music.get_playing() == music[k])] style "map_label" text_style "map_label_button_text"
