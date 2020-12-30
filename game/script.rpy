@@ -78,6 +78,9 @@ image bg shrubbery:
 image bg dunny_table:
     zoom 2.8
     "thundrone_estate.jpg"
+image bg divinecottage:
+    zoom 0.8
+    "divinecottage.jpeg"
 
 #Eadan images
 image Eaden happy:

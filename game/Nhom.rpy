@@ -164,14 +164,14 @@ label Nhom_end:
     MC "Wait, that’s it? Don’t you need to assemble your weapon and poisons"
     Nhom "Don’t worry about it! The great adventurer here has everything under control. I’ve got to get going. You’ll here about the victory soon!"
     hide Nhom with moveoutright 
-    w "Boss is finally going to the cave to defeat Thundrone once and for all"
+    w "Boss is finally going to the Diviner's Cottage to defeat Thundrone once and for all"
     "Man I want to see things go down, see if the hype is all worth it " 
-    scene bg cave with fade 
-    "Treading around the cave, you don't see anything so you decide to check the permiter" 
     scene bg shrubbery with fade
-    "You’re surprised how scenic the site is. And more importantly, how quiet the surroundings are. Wow, Nhom must be good if he’s settled everything already." 
     "You skulk around the shrubs to minimize chances of wandering into the epic fight" 
-    scene bg dunny_table with fade 
+    "Treading around outside the cottage you don't see anything so you decide to check inside"    
+    scene bg divinecottage with fade 
+    "You’re surprised how peaceful and well organized the inside of the cottage is." 
+    "And more importantly, how quiet the surroundings are. Wow, Nhom must be good if he’s settled everything already." 
     show Nhom happy at right 
     "You peak your head up to see Nhom wrestling- no Nhom setting up culinary ware on a table?"
     show Nhom angry 
