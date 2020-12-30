@@ -224,6 +224,12 @@ image Kaelin angry:
 image Kaelin:
     zoom 1.0
     "Kaelin.png"
+image Kaelin angryh:
+    zoom 0.5
+    "Kaelin_angryh.png"
+image Kaelin h:
+    zoom 0.5
+    "Kaelinh.png"
 
 
 

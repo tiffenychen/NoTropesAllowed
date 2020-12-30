@@ -6,7 +6,7 @@ label Nhom_handler:
     else:
         $ renpy.jump("Nhom" + storyTag[charProgress["Nhom"]])
 
-
+$ end_nhom = "u"
 
 label Nhom_beg:
     "You wander into the local tavern in search of a buzz after the long day of meeting the town’s people so you’ve made the executive decision to unwind by {p=1} {i}drinking{/i} with the town’s people… The grind never really stops"
@@ -219,6 +219,7 @@ label Nhom_end:
     Nhom "Well  I can use some of your mayoral candidate wisdom, what do you think I should do next?"  
     menu:
         "Settle Down as Tavern Owner":
+            $ end_nhom = "t"
             MC "It’s obvious! You realized from your quests that you’re not suited to being an adventurer after all"
             Litt "No! Don’t listen to this scrub, they don’t know what they’re talking about"
             show Nhom neutral 
@@ -232,6 +233,7 @@ label Nhom_end:
             "Nhom rushed over to grab Litt in a bear hug, resulting in some laughing shrieks" 
             "You smile at the sight" 
         "Get Ready for Next Adventure":
+            $ end_nhom = "a"
             MC "You’re meant to be Nhom the Noble! Adventuring is what you’re meant to do"
             Litt "That’s right boss!" 
             show Nhom neutral 
