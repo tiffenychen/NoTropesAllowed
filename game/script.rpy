@@ -70,8 +70,8 @@ image bg cave:
     zoom 1.5
     "cave.jpg"
 image bg marketplace:
-    zoom 2.8
-    "marketplace.jpg"
+    zoom 1.2
+    "marketplace2.jpg"
 image bg shrubbery:
     zoom 0.8
     "shrubbery.jpg"
