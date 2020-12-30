@@ -1,3 +1,11 @@
+image bg wall:
+    zoom 1.2
+    "wall.jpg"
+image bg nightmarket:
+    zoom 1.2
+    "nightmarket.png"
+image table = "table.png"
+
 label Jinglu_handler:
     if charProgress["Jinglu"] == 3:
         "It looks like there's nobody here right now."
@@ -7,6 +15,7 @@ label Jinglu_handler:
         $ renpy.jump("Jinglu" + storyTag[charProgress["Jinglu"]])
 
 label Jinglu_beg:
+    scene bg marketplace
     "It's really about time you stop by the marketplace to get some groceries for yourself. And right now, your road travel rations are starting to dwindle and you figure a quick break for some shopping won't hurt."
     "You scan the limited stall options, trying to figure out where to start your new stockpile, and land on fresh veggies first—you've had to eat a disturbing amount of jerky and hardtack while on the road, so you need the change."
     show Nhom neutral at center with moveinleft
@@ -64,25 +73,33 @@ label Jinglu_beg:
     jump ending_handler
 
 label Jinglu_med:
-    "The marketplace seems oddly empty today. You understand this is a small village, but even so you expect at least a shopkeep or two to be trying to hawk their wares to you."
-    "Not very long after that thought, voices drift over from the other end of the marketplace and for some reason you automatically hide behind the nearest empty stall."
+    scene bg nightmarket
+    "The marketplace seems oddly empty right now. You understand this is a small village, but even so you expect at least a shopkeep or two to be closing up their stalls right now."
+    "Not very long after that thought, voices drift over from the other end of the marketplace and for some reason"
+    scene bg wall with Fade(.25, 0, .75, color="#000")
+    "You automatically hide behind the nearest empty stall."
     "You realize after hiding that it's super weird to do this, but also the voices are closer now and if you make yourself known that will be even weirder."
     "You decide to hold tight."
     w "I told you no one would be here today. It's fine."
+    scene bg nightmarket
+    show Kaelin at sright
     show Jinglu sil at sleft
+    show table:
+        zoom 1.2
+        yalign 1.0
+    with dissolve
     "That's suspicious. You decide to peek out and see who else in this town is being suspicious aside from you."
     "Is that... The person on the poster? Kaelin was it? And..."
     show Jinglu worry at sleft with dissolve
     "You look over toward the second person"
-    hide Jinglu worry
-    scene bg castle with Fade(.25, 0, .75, color="#000")
+    scene bg wall with Fade(.25, 0, .75, color="#000")
     "and quickly duck back, heart pounding when you realize who the pair might be."
     "That second person perfectly matches the description of Jinglu that Nhom gave you."
     "And if he's meeting the person who advertises any service for a price..."
     "You thank your lucky stars you hid."
     Jinglu "I suppose you usually are. Perhaps I do worry too much."
     Kaelin "I don't understand why you don't stand up for yourself more. Or let me do it."
-    Jinglu "You really don't need to worry about me, as well I've handled myself this long."
+    Jinglu "You really don't need to worry about me. I've handled myself this long."
     "A heavy silence descends over the pair and you hear your own blood rushing in your ears."
     "Eventually, Jinglu speaks."
     Jinglu "I have the raw silk you wanted."

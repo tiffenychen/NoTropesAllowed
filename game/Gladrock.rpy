@@ -1,7 +1,7 @@
 define Janet = Character("Janet")
 
 label Gladrock_handler:
-    if charProgress["Gladrock"] == 2 and charProgress["Eadan"] == 1:
+    if charProgress["Gladrock"] == 2 and charProgress["Eaden"] == 1:
         "It looks like there's nobody here right now."
         scene black
         call screen map
@@ -9,13 +9,17 @@ label Gladrock_handler:
         $ renpy.jump("Gladrock" + storyTag[charProgress["Gladrock"]])
 
 label Eaden_handler:
-    if ((charProgress["Gladrock"] == 1 or charProgress["Gladrock"] == 2) and charProgress["Eadan"] == 0):
+    if charProgress["Gladrock"] == 1 or charProgress["Gladrock"] == 2:
+        $ Dragon_unlock = True
+    else:
+        $ Dragon_unlock = False
+    if Dragon_unlock and charProgress["Eaden"] == 0:
         jump Gladrock_end
     else:
         "Nobody seems to be here right now."
 
 label Gladrock_beg:
-    #scene __ with flash
+    scene bg road
     MC "The time has come, the clock has struck, the hour is upon me. It is time: to fight the dragon."
     show Gladrock happy
     Gladrock "Hello, oh weary wanderer. You called, and I came."
@@ -154,6 +158,7 @@ label Gladrock_beg:
     hide Gladrock
     with moveoutright
     "You shoot a glare at Gladrock but he doesn't see as he's too busy following Eaden inside"
+    scene bg cottage
     "The inside of the tower is dark, darker than you were expecting. The only light comes from the top of a staircase that winds down towards the bottom of the tower."
     show Gladrock happyh at left with moveinleft
     show Eaden happy:
@@ -224,8 +229,9 @@ label Gladrock_beg:
     jump ending_handler
 
 label Gladrock_med:
+    scene bg road
     show Gladrock sad at center
-    "Gladrock is standing in the town center, looking lost. You approach him."
+    "Gladrock is standing on the side of the road, looking lost. You approach him."
     hide Gladrock with dissolve
     show Gladrock happyh with dissolve
     Gladrock "Hail thee, mayoral candidate of our great and noble province. How goes it with you?"
@@ -247,11 +253,13 @@ label Gladrock_med:
             Gladrock "Now that you mention it, I saw that myself! Maybe that would be something I could do. Do you really think I could do it?"
             MC "Sure you can! I've seen you not even break a sweat on that hike through the woods we did. With the right training I think you'd be a real competitor. Not to mention the fact that there's probably only two other competitors in this whole town."
             show Gladrock happyh at center, hop
-            Gladrock "Thanks. It means a lot to hear you say that."
+            Gladrock "Thanks, %(pname)s. It means a lot to hear you say that."
+            $ charProblems["Gladrock"] = True
     $ charProgress["Gladrock"] +=1
     jump ending_handler
 
 label Gladrock_end:
+    scene bg road
     show Eaden sad at center
     "Eaden is back in town, perched on the road looking aimless. You go up to him."
     MC "Hi, Eaden. I wasn't expecting to see you again."
@@ -267,7 +275,8 @@ label Gladrock_end:
             show Eaden sorry
             Eaden "Wow, I'd never even thought that could be an option."
             show Eaden happy
-            Eaden "Maybe it's worth looking into. Thanks for your advice."
+            Eaden "Maybe it's worth looking into. Thanks for your advice, %(pname)s."
+            $ charProblems["Eaden"] = True
         "Have you thought about working in a bakery? I bet Janet's dad would appreciate an assistant with real life fiery breath, huh?":
             show Eaden confused
             Eaden "Um, no. How would that be making a difference?"
@@ -277,5 +286,5 @@ label Gladrock_end:
             show Eaden happy
             Eaden "But...uh, thanks for your thoughts."
             MC "No problem, Eaden! Solving people's problems is just what I do."
-    $ charProgress["Eadan"] +=1
+    $ charProgress["Eaden"] +=1
     jump ending_handler

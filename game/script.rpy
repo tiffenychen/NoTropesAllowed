@@ -78,7 +78,6 @@ image bg shrubbery:
 image bg dunny_table:
     zoom 2.8
     "thundrone_estate.jpg"
-<<<<<<< HEAD
 image bg road:
     zoom .7
     "road.jpg"
