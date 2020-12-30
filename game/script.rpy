@@ -2,13 +2,13 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-define Eaden = Character("Eaden")
-define Kaelin = Character("Kaelin")
-define Nhom = Character("Nhom")
+define Eaden = Character("Eaden", color="#34a88c")
+define Kaelin = Character("Kaelin", color="#7855a5")
+define Nhom = Character("Nhom", color="#ce3c19")
 define Litt = Character("Litt")
-define Jinglu = Character("Jinglu")
-define Meraline = Character("Meraline")
-define Gladrock = Character("Gladrock")
+define Jinglu = Character("Jinglu", color="#1cc2bd")
+define Meraline = Character("Meraline", color="#f9a336")
+define Gladrock = Character("Gladrock", color="#661fac")
 define MC = Character("Me")
 define Gambler = Character("Gambler")
 define w = Character("???")
@@ -78,6 +78,12 @@ image bg shrubbery:
 image bg dunny_table:
     zoom 2.8
     "thundrone_estate.jpg"
+image bg road:
+    zoom .7
+    "road.jpg"
+image bg cottage:
+    zoom .8
+    "cottage_in.jpg"
 
 #Eadan images
 image Eaden happy:
@@ -264,7 +270,7 @@ label start:
         image black = Solid((0, 0, 0, 255))
         image MediumVioletRed = Solid("#c71585")
 
-    scene black
+    scene bg road
     "I've been traveling for days and I'm finally here..."
     $ tname = renpy.input("The town of:")
     if tname == "":
@@ -273,16 +279,16 @@ label start:
     #scene town image with fade
     "Well..it certainly is small. Smaller than I expected, actually. {i}Quite{/i} small."
     show Gladrock happyh at center
-    Gladrock "Fare ye well, young traveller!"
+    w "Fare ye well, young traveller!"
     MC "AH! What the?!"
     show Gladrock sadh
-    Gladrock "Terribly sorry, fair pilgrim, I did not mean to startle ye. {w}You, that is."
+    w "Terribly sorry, fair pilgrim, I did not mean to startle ye. {w}You, that is."
     $ pname = renpy.input("Actually, my name is:")
     MC "Who are you? Why have you accosted me?"
     show Gladrock confusedh at center, hop
-    Gladrock "{i}Accosted?{/i}"
+    w "{i}Accosted?{/i}"
     show Gladrock angryh at center, hop
-    Gladrock "Why I have never been more offended in all my days, youthful wanderer. I am not here to {i}accost.{/i}"
+    w "Why I have never been more offended in all my days, youthful wanderer. I am not here to {i}accost.{/i}"
     show Gladrock happyh at center, hop
     Gladrock "I am here to welcome! I am shocked that you have not heard tell of me, Gladrock the Wise!"
     MC "Oh...my apologies Mr. Gladrock, I have not heard tell. But it is only because I lead the life of a nomad, cursed to wander until I have found my true home...which, I believe, is here!"
